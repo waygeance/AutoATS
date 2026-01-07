@@ -1,73 +1,13 @@
 # AutoATS
 
-AutoATS is a resume and job-description analysis tool that helps generate, edit, and export resumes tailored to job descriptions using AI services. It provides a web UI, API endpoints, and utilities to run local examples and tests.
-
-**Project Status:** Active — the project is stable and actively developed.
-
-## Features
-
-- Generate resumes from job descriptions and user profiles
-- Edit resume JSON and LaTeX outputs
-- Export PDF resumes
-- Integrations with local AI services and LaTeX rendering
-
-## Getting Started
-
-1. Install dependencies:
-
-```
-npm install
-```
-
-2. Run the development server:
-
-```
-npm run dev
-```
-
-3. Run tests:
-
-```
-npm test
-```
-
-See `package.json` for available scripts.
-
-## Repository Structure
-
-- `components/` — UI components
-- `pages/` — Next.js pages and API routes
-- `server/` — server-side helpers, prompts, and library code
-- `services/` — external service integrations (AI, LaTeX, editor)
-- `latex/` — LaTeX server and Dockerfiles for PDF generation
-- `__tests__/` — unit and integration tests
-
-## Usage
-
-Use the web UI at the root page to upload a job description and profile, or call the API routes under `/api/` for programmatic usage. Example scripts are in `scripts/`.
-
-## Contributing
-
-Contributions are welcome! Please read `CONTRIBUTING.md` for guidelines on filing issues, making changes, running tests, and submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License — see `LICENSE` for details.
-
-## Contact
-
-Open issues or pull requests on GitHub. For maintainer contact, see repository metadata.
-
-# AutoATS - AI-Powered Resume Builder
-
-A modern, intelligent resume builder that uses AI to optimize your resume for specific job descriptions. Built with Next.js, TypeScript, and Tailwind CSS, powered by Ollama for local AI processing.
+AI-powered resume builder that optimizes your resume for specific job descriptions using local AI (Ollama). Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## ✨ Features
 
 - 🤖 **AI-Powered Optimization**: Uses Ollama (LLaMA 3) to analyze job descriptions and optimize your resume
-- 📝 **Smart Project Selection**: Automatically selects the most relevant projects from a pool of 12+ projects
+- 📝 **Smart Project Selection**: Automatically selects the most relevant projects from your pool
 - 🎯 **ATS-Friendly**: Generates resumes optimized for Applicant Tracking Systems
-- 📄 **PDF Generation**: Generates a professional PDF (no LaTeX, no Docker)
+- 📄 **PDF Generation**: Professional PDF output via local pdflatex (no Docker required)
 - 🎨 **Modern UI**: Beautiful, responsive interface built with Tailwind CSS
 - 🔒 **Privacy-First**: All AI processing happens locally with Ollama
 
@@ -76,9 +16,23 @@ A modern, intelligent resume builder that uses AI to optimize your resume for sp
 ### Prerequisites
 
 1. **Node.js** (v18 or higher)
-2. **Ollama** with LLaMA 3 model (for AI features)
+2. **pdflatex** (TeX Live)
+3. **Ollama** with LLaMA 3 model
 
-### Installation
+### One-Command Setup
+
+```bash
+./infra/setup.sh
+```
+
+This script will:
+
+- Check for Node.js and install dependencies
+- Verify pdflatex installation
+- Check Ollama availability
+- Offer to pull the llama3 model if missing
+
+### Manual Setup
 
 1. **Clone the repository**
 
@@ -93,23 +47,7 @@ A modern, intelligent resume builder that uses AI to optimize your resume for sp
    npm install
    ```
 
-3. **Set up environment variables**
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Edit `.env` to configure your settings:
-
-   ```env
-   # AI provider: ollama (recommended) or openai
-   AI_PROVIDER=ollama
-
-   # For Ollama (local LLaMA)
-   OLLAMA_URL=http://localhost:11434/api/generate
-   ```
-
-4. **Install and setup Ollama**
+3. **Install and setup Ollama**
 
    ```bash
    # Install Ollama
@@ -122,106 +60,69 @@ A modern, intelligent resume builder that uses AI to optimize your resume for sp
    ollama serve
    ```
 
-5. **Start the development server**
+4. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-6. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Running
+## 📖 Usage
 
-Run Ollama in one terminal:
+1. **Paste Job Description**: Copy and paste the complete job description
+2. **Generate Resume**: Click "Generate Resume" - the AI will:
+   - Select the most relevant projects from your pool
+   - Tailor your summary to match job requirements
+   - Optimize content for ATS keywords
+3. **Download PDF**: Preview and download your optimized resume
 
-```bash
-ollama serve
-```
-
-Run the app in another:
-
-```bash
-npm run dev
-```
-
-## 📖 Usage Guide
-
-### Step 1: Paste Job Description
-
-- Copy and paste the complete job description
-- Include requirements, responsibilities, and qualifications
-- The more detailed, the better the AI optimization
-
-### Step 2: AI-Powered Project Selection
-
-- Click "🤖 AI-Powered Selection" to analyze the JD
-- The AI will recommend the most relevant projects from your pool
-- You can also manually select/deselect projects
-
-### Step 3: Generate Resume
-
-- Click "Generate Resume" to create your ATS-optimized resume
-- The AI will:
-  - Tailor your summary to match job requirements
-  - Highlight relevant skills and experiences
-  - Optimize content for ATS keywords
-- Download a PDF (preview + download)
-
-## 🏗️ Project Structure
+## 🏗️ Repository Structure
 
 ```
 AutoATS/
-├── components/           # React components
-│   ├── JobDescriptionForm.tsx
-│   ├── ProjectSelector.tsx
-│   └── ResultDisplay.tsx
-├── pages/               # Next.js pages
-│   ├── api/            # API endpoints
-│   │   ├── analyze-jd.ts
-│   │   └── generate-resume.ts
-│   ├── _app.tsx
-│   └── index.tsx
-├── services/            # Legacy services (no longer required for PDF generation)
-├── styles/             # CSS styles
-│   └── globals.css
-├── examples/           # Sample templates and profiles
-└── docs/              # Additional documentation
+├── apps/web/              # Next.js frontend
+│   ├── components/        # React components
+│   ├── pages/            # Next.js pages and API routes
+│   ├── styles/           # CSS styles
+│   ├── __tests__/        # Tests
+│   └── examples/         # LaTeX templates
+├── packages/api/          # API service (Express/Next.js API)
+│   └── server/           # Server-side helpers
+├── packages/latex/        # LaTeX compilation utilities
+│   └── services/         # LaTeX service code
+├── infra/                 # Infrastructure and deployment
+│   └── scripts/          # Setup and deploy scripts
+└── .github/              # Issue templates and PR template
 ```
 
 ## 🔧 Configuration
 
-### AI Provider Options
+### Environment Variables
 
-#### Ollama (Recommended)
+```env
+# Ollama configuration
+OLLAMA_URL=http://localhost:11434/api/generate
+OLLAMA_TIMEOUT_MS=20000
 
-- Local processing, no API keys needed
-- Uses LLaMA 3 model
-- Complete privacy
-- Free to use
+# API port (optional)
+PORT=3001
+```
 
-#### OpenAI (Alternative)
+### Customizing Projects
 
-- Requires API key
-- Faster processing
-- Cloud-based
-- Usage costs apply
+Edit the LaTeX template at `apps/web/examples/user_resume.tex` to add your projects:
 
-### Customization
-
-#### Adding Your Own Projects
-
-Edit the `sampleProjects` array in:
-
-- `pages/api/analyze-jd.ts`
-- `pages/api/generate-resume.ts`
-- `components/ProjectSelector.tsx`
-
-#### Customizing LaTeX Template
-
-The system uses a professional ATS-friendly template. You can modify the LaTeX generation in:
-
-- `pages/api/generate-resume.ts` (function `generateLatexTemplate`)
+```latex
+% START PROJECTS
+\resumeProject{Your Project Title}{Tech Stack}{Duration}{Location}
+\resumeHollowItemListStart
+\item {Achievement 1}
+\item {Achievement 2}
+\resumeHollowItemListEnd
+% END PROJECTS
+```
 
 ## 🛠️ Development
 
@@ -240,9 +141,9 @@ npm run lint             # Run linter
 
 ### API Endpoints
 
-#### `POST /api/analyze-jd`
+#### `POST /api/generate-resume`
 
-Analyzes job description and recommends relevant projects.
+Generates optimized resume based on job description.
 
 **Request:**
 
@@ -256,35 +157,20 @@ Analyzes job description and recommends relevant projects.
 
 ```json
 {
-  "recommendedProjects": ["1", "3", "5"],
-  "keywords": ["react", "node.js", "aws"],
-  "analysisMethod": "ai"
+  "id": "unique-id",
+  "pdfUrl": "/api/pdf/unique-id",
+  "debug": {
+    "selectedProjectTitles": ["Project A", "Project B"],
+    "projectScores": [...],
+    "keywords": ["react", "node.js"],
+    "roleSignals": ["frontend", "react"]
+  }
 }
 ```
 
-#### `POST /api/generate-resume`
+#### `GET /api/status`
 
-Generates optimized resume based on JD and selected projects.
-
-**Request:**
-
-```json
-{
-  "jobDescription": "Full-stack developer position...",
-  "selectedProjects": ["1", "3", "5"]
-}
-```
-
-**Response:**
-
-```json
-{
-  "latex": "% LaTeX content...",
-  "pdfUrl": "http://localhost:3030/pdf/1234567890.pdf",
-  "selectedProjects": ["1", "3", "5"],
-  "timestamp": "2024-01-06T15:30:00.000Z"
-}
-```
+Health checks for Ollama and pdflatex.
 
 ## 🔍 Troubleshooting
 
@@ -300,32 +186,32 @@ ollama list
 ollama serve
 ```
 
+#### pdflatex Not Found
+
+```bash
+# Ubuntu/Debian
+sudo apt-get install texlive-full
+
+# macOS
+brew install --cask mactex
+
+# Windows
+# Install MiKTeX from https://miktex.org/
+```
+
 #### LaTeX Compilation Errors
 
-```bash
-# Check LaTeX service status
-curl http://localhost:3030/health
+Check the debug response for specific error messages. Common issues:
 
-# Rebuild LaTeX service
-npm run compile-service:build
-npm run compile-service:run
-```
-
-#### Tailwind CSS Not Working
-
-```bash
-# Rebuild CSS
-npm run build
-```
-
-### Getting Help
-
-1. Check the console logs for detailed error messages
-2. Ensure all services are running (web app, LaTeX service, Ollama)
-3. Verify environment variables are correctly set
-4. Check network connectivity for external services
+- Missing LaTeX packages
+- Syntax errors in template
+- Special characters not escaped
 
 ## 🤝 Contributing
+
+We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Quick Contribution Guide
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -346,26 +232,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please:
+If you encounter issues:
 
 1. Check the troubleshooting section above
-2. Search existing GitHub issues
-3. Create a new issue with detailed information
+2. Search existing [GitHub issues](https://github.com/your-repo/AutoATS/issues)
+3. Create a new issue with detailed information and debug output
 
 ---
 
 **Built with ❤️ for job seekers who want to stand out!**
-
-## Running the Application
-
-```bash
-# Run the setup script
-./setup.sh
-
-# Then start services:
-ollama serve                    # Start AI service
-npm run compile-service:run     # Start LaTeX service
-npm run dev                    # Start web app
-```
-
-The application will be available at `http://localhost:3030` 
