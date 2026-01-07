@@ -122,14 +122,6 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({
             <li>• PDF generated and ready to download</li>
           </ul>
         </div>
-
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <h3 className="font-semibold text-blue-800 mb-2">📊 ATS Score</h3>
-          <div className="text-3xl font-bold text-blue-600 mb-2">95%</div>
-          <p className="text-sm text-blue-700">
-            Your resume is highly optimized for Applicant Tracking Systems
-          </p>
-        </div>
       </div>
 
       <div className="border-t pt-6">
