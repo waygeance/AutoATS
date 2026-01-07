@@ -308,4 +308,4 @@ npm run compile-service:run     # Start LaTeX service
 npm run dev                    # Start web app
 ```
 
-The application will be available at `http://localhost:3030`
+The application will be available at `http://localhost:3030` 
