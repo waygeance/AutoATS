@@ -1,0 +1,137 @@
+%------------------------
+% Resume in Latex
+% Author : Bhavya Singh
+% License : MIT
+%------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+% Use lmodern for better compatibility than cfr-lm while maintaining the look
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Tight margins to fit on one page
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\usepackage[most]{tcolorbox}
+\tcbset{ frame code={}, center title, left=0pt, right=0pt, top=0pt, bottom=0pt, colback=gray!20, colframe=white, width=\dimexpr\textwidth\relax, enlarge left by=-2mm, boxsep=4pt, arc=0pt,outer arc=0pt, }
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+% Sections formatting
+\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{ \item{ \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}} } }
+\newcommand{\resumePOR}[3]{ \vspace{0.5mm}\item \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} \end{tabular*} \vspace{-2mm} }
+\newcommand{\resumeSubheading}[4]{ \vspace{0.5mm}\item \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1} & \textit{\footnotesize{#4}} \\ \textit{\footnotesize{#3}} & \footnotesize{#2}\\ \end{tabular*} \vspace{-2.4mm} }
+\newcommand{\resumeProject}[4]{ \vspace{0.5mm}\item \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1} & \textit{\footnotesize{#3}} \\ \footnotesize{\textit{#2}} & \footnotesize{#4} \end{tabular*} \vspace{-2.4mm} }
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemi}{\textbullet} % Solid bullet for outer lists
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{% \vspace{2mm}
+\begin{tcolorbox}
+\textbf{\large #1}
+\end{tcolorbox}
+\vspace{-4mm} }
+% New command for hollow bullets
+\newcommand{\resumeHollowItemListStart}{\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,label=\textopenbullet,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeHollowItemListEnd}{\end{itemize}\vspace{-2mm}}
+\usepackage{amssymb}
+% \newcommand{\textopenbullet}{$\circ$}
+%---- Personal identifiers ----
+\newcommand{\name}{Bhavya Singh}
+\newcommand{\phone}{6377303089}
+\newcommand{\emaila}{bhavyasingh27112004@gmail.com}
+\newcommand{\linkedin}{linkedin.com/in/bhavyasinghiiitk}
+\newcommand{\github}{github.com/waygeance}
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+\begin{center}
+{\Huge \scshape \name} \\\vspace{2pt}
+{\fontsize{9pt}{11pt}\selectfont \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faPhone}\ +91-\phone ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faEnvelope}\ \href{mailto:\emaila}{\emaila} ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faLinkedin}\ \href{https://\linkedin}{\linkedin} ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faGithub}\ \href{https://\github}{\github}}
+\end{center}
+%-----------SUMMARY-----------
+% START SUMMARY
+\section{\textbf{Summary}}\small{Jane Doe — Python, Node.js, LaTeX, Next.js, React, NLP. Focused on Resume Parser. Strong experience in Python, Node.js, LaTeX.}
+% END SUMMARY
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+\resumeSubHeadingListStart
+\resumeSubheading { B.Tech Electronics \& Communication Engineering}{CGPA: 7.1 / 10} {Indian Institute of Information Technology, Kota (IIIT-K)}{Graduated: 2027}
+\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{\textbf{Experience}}
+\resumeSubHeadingListStart
+\resumeSubheading { Software Development Engineer Intern | Frontend Focus}{Remote}{ DiCoTr AI}{August 2025 -- Present}
+\vspace{+1.0mm}
+\resumeHollowItemListStart
+\item {Collaborated directly with the design team to translate high-fidelity Figma designs into a pixel-perfect Next.js and TypeScript web platform, ensuring 100\% design consistency.}
+\item {Optimized the application for performance and SEO, achieving a 95+ Google Lighthouse score and improving organic search visibility by 25\%.}
+\item {Participated in daily Agile Scrums and sprint planning, streamlining communication and improving the team's development velocity by 20\%.}
+\item {Authored and maintained comprehensive technical documentation for the codebase, reducing onboarding time for new developers by 30\%.}
+\resumeHollowItemListEnd
+\resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+% START PROJECTS
+\section{\textbf{Projects}}
+\begin{itemize}
+\item \textbf{Resume Parser}:
+\begin{itemize}
+\item Built a PDF/LaTeX resume parser using Python and regex to extract sections
+\item Improved parsing accuracy by 30% through heuristic rules and unit tests
+\end{itemize}
+\item \textbf{ATS Optimization Tool}:
+\begin{itemize}
+\item Implemented keyword matching and scoring for job descriptions
+\item Integrated with LaTeX templates to produce one-page resumes
+\end{itemize}
+\item \textbf{Website}:
+\begin{itemize}
+\item Built a Next.js web app for uploading and processing resumes
+\item Implemented Added PDF preview and download functionality
+\end{itemize}
+\end{itemize}
+% END PROJECTS
+%-----------SKILLS-----------
+% START SKILLS
+\section{\textbf{Technical Skills}}
+\begin{itemize}
+\item Python, Node.js, LaTeX, Next.js, React, NLP\end{itemize}
+% END SKILLS
+%-----------AWARDS & CERTIFICATIONS-----------
+\section{\textbf{Awards \& Certifications}}
+\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=1mm]\small
+\item \textbf{Meta Hacker Cup (2025):} Ranked 2020 out of 20,000+ candidates globally in round 2.
+\item \textbf{Hacktoberfest Super Contributor:} Recognized as a top contributor for active open-source contributions.
+\item \textbf{Finalist, IIT Jodhpur National Hackathon (2025):} Led a 6-member team to achieve a Top 7 position out of 200+ national teams.
+\item \textbf{Finalist, Shaastra Programming Contest, IIT Madras (2025):} Finalist in one of India's most prestigious competitive programming contests.
+\item \textbf{Ranked in Top 5\%, GenSolve Hackathon by Adobe (2024):} Recognized for excellence in machine learning-driven approaches.
+\end{itemize}
+\end{document}

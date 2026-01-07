@@ -1,0 +1,1 @@
+We are hiring a Software Engineer with experience in NLP, Node.js, and LaTeX. Familiarity with PDF parsing and resume/ATS optimization is a plus.

@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      - AI_PROVIDER=${AI_PROVIDER:-ollama}
+      - LLM_PROVIDER=${LLM_PROVIDER:-ollama}
+      - OLLAMA_URL=http://mock-ollama:11434/api/generate
+      - COMPILE_SERVICE_URL=http://compile:3030
+    depends_on:
+      - mock-ollama
+      - compile
+
+  compile:
+    build:
+      context: ./services/latex
+      dockerfile: Dockerfile
+    ports:
+      - "3030:3030"
+
+  mock-ollama:
+    build:
+      context: ./services/mock-ollama
+      dockerfile: Dockerfile
+    ports:
+      - "11434:11434"
+    environment:
+      - PORT=11434
+
+  api:
+    build:
+      context: ./services/api
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - OLLAMA_URL=http://mock-ollama:11434/api/generate
+      - COMPILE_SERVICE_URL=http://compile:3030/compile
+    depends_on:
+      - mock-ollama
+      - compile
+# Optional: add volumes if you'd like to persist PDFs
+# volumes:
+#   autoats_out:
+#     driver: local

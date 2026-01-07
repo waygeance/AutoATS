@@ -1,0 +1,245 @@
+%------------------------
+% Resume in Latex
+% Author : Bhavya Singh
+% License : MIT
+%------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+% Use lmodern for better compatibility than cfr-lm while maintaining the look
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Tight margins to fit on one page
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\usepackage[most]{tcolorbox}
+\tcbset{ frame code={}, center title, left=0pt, right=0pt, top=0pt, bottom=0pt, colback=gray!20, colframe=white, width=\dimexpr\textwidth\relax, enlarge left by=-2mm, boxsep=4pt, arc=0pt,outer arc=0pt, }
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+% Sections formatting
+\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{ \item{ \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}} } }
+\newcommand{\resumePOR}[3]{ \vspace{0.5mm}\item \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} \end{tabular*} \vspace{-2mm} }
+\newcommand{\resumeSubheading}[4]{ \vspace{0.5mm}\item \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1} & \textit{\footnotesize{#4}} \\ \textit{\footnotesize{#3}} & \footnotesize{#2}\\ \end{tabular*} \vspace{-2.4mm} }
+\newcommand{\resumeProject}[4]{ \vspace{0.5mm}\item \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} \textbf{#1} & \textit{\footnotesize{#3}} \\ \footnotesize{\textit{#2}} & \footnotesize{#4} \end{tabular*} \vspace{-2.4mm} }
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemi}{\textbullet} % Solid bullet for outer lists
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{% \vspace{2mm}
+\begin{tcolorbox}
+\textbf{\large #1}
+\end{tcolorbox}
+\vspace{-4mm} }
+% New command for hollow bullets
+\newcommand{\resumeHollowItemListStart}{\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,label=\textopenbullet,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeHollowItemListEnd}{\end{itemize}\vspace{-2mm}}
+\usepackage{amssymb}
+% \newcommand{\textopenbullet}{$\circ$}
+%---- Personal identifiers ----
+\newcommand{\name}{Bhavya Singh}
+\newcommand{\phone}{6377303089}
+\newcommand{\emaila}{bhavyasingh27112004@gmail.com}
+\newcommand{\linkedin}{linkedin.com/in/bhavyasinghiiitk}
+\newcommand{\github}{github.com/waygeance}
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+\begin{center}
+{\Huge \scshape \name} \\\vspace{2pt}
+{\fontsize{9pt}{11pt}\selectfont \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faPhone}\ +91-\phone ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faEnvelope}\ \href{mailto:\emaila}{\emaila} ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faLinkedin}\ \href{https://\linkedin}{\linkedin} ~|~ \raisebox{-0.1\height}{\fontsize{9pt}{11pt}\selectfont \faGithub}\ \href{https://\github}{\github}}
+\end{center}
+%-----------SUMMARY-----------
+% START SUMMARY
+\section{\textbf{Summary}}
+\small{[Generated from Job Description at runtime]}
+% END SUMMARY
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+\resumeSubHeadingListStart
+\resumeSubheading { B.Tech Electronics \& Communication Engineering}{CGPA: 7.1 / 10} {Indian Institute of Information Technology, Kota (IIIT-K)}{Graduated: 2027}
+\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{\textbf{Experience}}
+\resumeSubHeadingListStart
+\resumeSubheading { Software Development Engineer Intern | Frontend Focus}{Remote}{ DiCoTr AI}{August 2025 -- Present}
+\vspace{+1.0mm}
+\resumeHollowItemListStart
+\item {Collaborated directly with the design team to translate high-fidelity Figma designs into a pixel-perfect Next.js and TypeScript web platform, ensuring 100\% design consistency.}
+\item {Optimized the application for performance and SEO, achieving a 95+ Google Lighthouse score and improving organic search visibility by 25\%.}
+\item {Participated in daily Agile Scrums and sprint planning, streamlining communication and improving the team's development velocity by 20\%.}
+\item {Authored and maintained comprehensive technical documentation for the codebase, reducing onboarding time for new developers by 30\%.}
+\resumeHollowItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+% START PROJECTS
+\section{\textbf{Projects}}
+\resumeSubHeadingListStart
+
+% ---------------- SDE / CORE ----------------
+\resumeProject{Scalable REST API Service | Node.js, Express, MongoDB}{}{}{}
+\resumeHollowItemListStart
+\item {Designed RESTful APIs supporting high-concurrency access with optimized database schemas.}
+\item {Reduced API latency by 40\% using indexing, caching, and query optimization.}
+\item {Implemented structured logging and centralized error handling for maintainability.}
+\resumeHollowItemListEnd
+
+\resumeProject{Algorithmic Problem Solver | C++, STL, Competitive Programming}{}{}{}
+\resumeHollowItemListStart
+\item {Solved 500+ algorithmic problems across data structures, greedy, and dynamic programming.}
+\item {Optimized solutions under strict time and memory constraints.}
+\item {Improved problem-solving efficiency through contest-based practice.}
+\resumeHollowItemListEnd
+
+% ---------------- FRONTEND ----------------
+\resumeProject{High-Performance Web Platform | Next.js, TypeScript}{}{}{}
+\resumeHollowItemListStart
+\item {Built modular frontend architecture with reusable components for scalability.}
+\item {Used server-side rendering (SSR) to achieve 90+ Lighthouse performance and SEO scores.}
+\item {Improved UX consistency and reduced runtime bugs via strict TypeScript typing.}
+\resumeHollowItemListEnd
+
+\resumeProject{Responsive Dashboard UI | React, Tailwind CSS}{}{}{}
+\resumeHollowItemListStart
+\item {Developed responsive dashboards optimized for mobile and desktop devices.}
+\item {Improved render performance using memoization and efficient state management.}
+\item {Ensured accessibility compliance with semantic HTML and ARIA standards.}
+\resumeHollowItemListEnd
+
+% ---------------- BACKEND ----------------
+\resumeProject{Authentication \& Authorization System | JWT, RBAC}{}{}{}
+\resumeHollowItemListStart
+\item {Implemented secure login and role-based access control using JWT tokens.}
+\item {Handled session expiry and token validation to prevent unauthorized access.}
+\item {Designed middleware for reusable security enforcement across services.}
+\resumeHollowItemListEnd
+
+\resumeProject{Database Optimization Engine | MongoDB, Indexing}{}{}{}
+\resumeHollowItemListStart
+\item {Analyzed query patterns and implemented compound indexes.}
+\item {Reduced average query execution time by 45\%.}
+\item {Maintained data consistency under concurrent access.}
+\resumeHollowItemListEnd
+
+% ---------------- SDET / QA ----------------
+\resumeProject{Automated Testing Framework | Jest, Cypress}{}{}{}
+\resumeHollowItemListStart
+\item {Developed unit, integration, and end-to-end test suites.}
+\item {Reduced production bugs by 30\% through early detection.}
+\item {Integrated tests into CI pipelines for continuous quality assurance.}
+\resumeHollowItemListEnd
+
+\resumeProject{API Testing Suite | Postman, Newman}{}{}{}
+\resumeHollowItemListStart
+\item {Designed comprehensive API test cases covering edge cases and failures.}
+\item {Automated regression testing to ensure backward compatibility.}
+\item {Improved API reliability while reducing manual testing effort.}
+\resumeHollowItemListEnd
+
+% ---------------- UI / UX ----------------
+\resumeProject{User-Centered Redesign | Figma, UX Research}{}{}{}
+\resumeHollowItemListStart
+\item {Conducted usability studies to identify friction points in user workflows.}
+\item {Redesigned user journeys, reducing task completion time by 25\%.}
+\item {Created wireframes and high-fidelity prototypes aligned with accessibility standards.}
+\resumeHollowItemListEnd
+
+\resumeProject{Design System Development | UI Components}{}{}{}
+\resumeHollowItemListStart
+\item {Built reusable UI components to ensure design consistency across products.}
+\item {Improved collaboration between designers and developers.}
+\item {Reduced UI rework by standardizing typography, spacing, and color tokens.}
+\resumeHollowItemListEnd
+
+% ---------------- DATA / ANALYTICS ----------------
+\resumeProject{Business Intelligence Dashboard | Power BI, SQL}{}{}{}
+\resumeHollowItemListStart
+\item {Developed interactive dashboards to track KPIs and business metrics.}
+\item {Enabled data-driven decision-making with real-time insights.}
+\item {Integrated multiple data sources for consolidated reporting.}
+\resumeHollowItemListEnd
+
+\resumeProject{Data Cleaning \& Analysis Pipeline | Python, Pandas}{}{}{}
+\resumeHollowItemListStart
+\item {Processed and cleaned large datasets to improve data accuracy.}
+\item {Performed exploratory data analysis to identify trends and anomalies.}
+\item {Generated stakeholder-ready reports using visual summaries.}
+\resumeHollowItemListEnd
+
+% ---------------- AI / SYSTEMS ----------------
+\resumeProject{AI Resume Generator | LaTeX, Ollama LLMs}{}{}{}
+\resumeHollowItemListStart
+\item {Built an AI-powered system to generate structured LaTeX resumes automatically.}
+\item {Integrated local LLM inference using Ollama for privacy-preserving generation.}
+\item {Automated PDF generation using pdflatex with dynamic content injection.}
+\resumeHollowItemListEnd
+
+\resumeProject{System Automation Tooling | Linux, Bash}{}{}{}
+\resumeHollowItemListStart
+\item {Automated system maintenance tasks using shell scripts.}
+\item {Improved developer productivity through CLI-based workflows.}
+\item {Reduced manual intervention by scheduling recurring jobs.}
+\resumeHollowItemListEnd
+
+% ---------------- DEVOPS ----------------
+\resumeProject{Containerized Development Environment | Docker}{}{}{}
+\resumeHollowItemListStart
+\item {Containerized services for consistent development and deployment environments.}
+\item {Simplified onboarding by reducing environment setup complexity.}
+\item {Managed service dependencies using Docker Compose.}
+\resumeHollowItemListEnd
+
+\resumeSubHeadingListEnd
+% END PROJECTS
+
+
+
+
+%-----------SKILLS-----------
+% START SKILLS
+\section{\textbf{Technical Skills}}
+\begin{itemize}[leftmargin=0.05in, label={}]
+\small{\item{ \textbf{Languages:} C, C++, JavaScript, TypeScript \\ \textbf{Web Technologies:} MERN Stack (MongoDB, Express.js, React, Node.js), Next.js, Tailwind CSS \\ \textbf{Cloud \& Tools:} Git, GitHub, Docker, VS Code, Sublime, Linux, AWS\\ \textbf{Core Concepts:} Algorithms, Data Structures, Operating Systems, OOP }}
+\end{itemize}
+% END SKILLS
+%-----------AWARDS & CERTIFICATIONS-----------
+\section{\textbf{Awards \& Certifications}}
+\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=1mm]\small
+\item \textbf{Meta Hacker Cup (2025):} Ranked 2020 out of 20,000+ candidates globally in round 2.
+\item \textbf{Hacktoberfest Super Contributor:} Recognized as a top contributor for active open-source contributions.
+\item \textbf{Finalist, IIT Jodhpur National Hackathon (2025):} Led a 6-member team to achieve a Top 7 position out of 200+ national teams.
+\item \textbf{Finalist, Shaastra Programming Contest, IIT Madras (2025):} Finalist in one of India's most prestigious competitive programming contests.
+\item \textbf{Ranked in Top 5\%, GenSolve Hackathon by Adobe (2024):} Recognized for excellence in machine learning-driven approaches.
+\end{itemize}
+\end{document}

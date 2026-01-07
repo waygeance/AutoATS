@@ -1,0 +1,30 @@
+{
+  "name": "Jane Doe",
+  "projects": [
+    {
+      "title": "Resume Parser",
+      "bullets": [
+        "Built a PDF/LaTeX resume parser using Python and regex to extract sections",
+        "Improved parsing accuracy by 30% through heuristic rules and unit tests"
+      ],
+      "skills": ["Python", "Regex", "Unit testing"]
+    },
+    {
+      "title": "ATS Optimization Tool",
+      "bullets": [
+        "Implemented keyword matching and scoring for job descriptions",
+        "Integrated with LaTeX templates to produce one-page resumes"
+      ],
+      "skills": ["Node.js", "LaTeX", "NLP"]
+    },
+    {
+      "title": "Website",
+      "bullets": [
+        "Built a Next.js web app for uploading and processing resumes",
+        "Added PDF preview and download functionality"
+      ],
+      "skills": ["Next.js", "React"]
+    }
+  ],
+  "skills": ["Python", "Node.js", "LaTeX", "Next.js", "React", "NLP", "Regex"]
+}
