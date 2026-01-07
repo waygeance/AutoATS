@@ -1,3 +1,63 @@
+# AutoATS
+
+AutoATS is a resume and job-description analysis tool that helps generate, edit, and export resumes tailored to job descriptions using AI services. It provides a web UI, API endpoints, and utilities to run local examples and tests.
+
+**Project Status:** Active — the project is stable and actively developed.
+
+## Features
+
+- Generate resumes from job descriptions and user profiles
+- Edit resume JSON and LaTeX outputs
+- Export PDF resumes
+- Integrations with local AI services and LaTeX rendering
+
+## Getting Started
+
+1. Install dependencies:
+
+```
+npm install
+```
+
+2. Run the development server:
+
+```
+npm run dev
+```
+
+3. Run tests:
+
+```
+npm test
+```
+
+See `package.json` for available scripts.
+
+## Repository Structure
+
+- `components/` — UI components
+- `pages/` — Next.js pages and API routes
+- `server/` — server-side helpers, prompts, and library code
+- `services/` — external service integrations (AI, LaTeX, editor)
+- `latex/` — LaTeX server and Dockerfiles for PDF generation
+- `__tests__/` — unit and integration tests
+
+## Usage
+
+Use the web UI at the root page to upload a job description and profile, or call the API routes under `/api/` for programmatic usage. Example scripts are in `scripts/`.
+
+## Contributing
+
+Contributions are welcome! Please read `CONTRIBUTING.md` for guidelines on filing issues, making changes, running tests, and submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License — see `LICENSE` for details.
+
+## Contact
+
+Open issues or pull requests on GitHub. For maintainer contact, see repository metadata.
+
 # AutoATS - AI-Powered Resume Builder
 
 A modern, intelligent resume builder that uses AI to optimize your resume for specific job descriptions. Built with Next.js, TypeScript, and Tailwind CSS, powered by Ollama for local AI processing.
@@ -304,7 +364,7 @@ If you encounter any issues or have questions, please:
 
 # Then start services:
 ollama serve                    # Start AI service
-npm run compile-service:run     # Start LaTeX service  
+npm run compile-service:run     # Start LaTeX service
 npm run dev                    # Start web app
 ```
 
